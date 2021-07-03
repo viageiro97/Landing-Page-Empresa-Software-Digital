@@ -1,0 +1,32 @@
+@use '../abstracts/variables' as *;
+
+.btn{
+    cursor: pointer;
+    display: inline-block;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: .95rem;
+    background: $bright-red;
+    border: none;
+    padding: 8px 25px;
+    border-radius: $comp-radius2;
+    box-shadow:$shadow-sm;
+    transition: $transition1;
+
+    &:hover{
+        background: $dark-grayish-blue;
+        box-shadow: $shadow-md;
+    }
+}
+
+.btn-secondary{
+    background: white;
+    color: $bright-red;
+
+    &:hover{
+        color: white;
+        background: $dark-grayish-blue;
+        box-shadow: $shadow-md;
+    }
+}

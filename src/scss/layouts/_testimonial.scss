@@ -1,0 +1,83 @@
+@use '../abstracts' as *;
+
+.testimonial{
+    text-align: center;
+    .container{
+        padding-top: 130px;
+        overflow: hidden;
+        @include breakpoint-up(md){
+            position: relative;
+            padding: 0;
+            padding-top: 130px;
+            max-width: 100%;
+        }
+    }
+
+    h2{
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 100px;
+    }
+
+    .caroussel{
+        min-height: 320px;
+        display: flex;
+        position: relative;
+        @include breakpoint-up(330px){
+            min-height: 275px;
+        }
+    }
+
+    .testimony{
+        @include breakpoint-up(md){
+            left: 32%;
+            width: 36%;
+        }
+        transition: $transition1;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        padding-top: 50px;
+        background: $very-pale-red;
+        .avatar{
+            position: absolute;
+            width: 100%;
+            top: -30px;
+            left: 0;
+            margin: 0 auto;
+
+            img{
+                margin: 0 auto;
+                width: 60px;
+                height: 60px;
+            }
+        }
+    }
+
+    .caroussel__btns{
+        height: 30px;
+        margin-top: 35px;
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: center;
+
+        .active{
+            background: $bright-red;
+        }
+        div{
+            cursor: pointer;
+            border-radius: 100%;
+            width: 10px;
+            height: 10px;
+            border: 1px solid $bright-red;
+            background: none;
+        }
+        div+div{
+            margin-left: 6px;
+        }
+    }
+}

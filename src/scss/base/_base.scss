@@ -1,0 +1,62 @@
+@use '../abstracts/mixins' as *;
+/**
+ * Estilos Basicos Gerais em elementos HTML!
+ */
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    background: url('../../../public/images/bg-tablet-pattern.svg') no-repeat 60px -180px;
+    background-size: 530px;
+
+    @include breakpoint-up(500px){
+        background-position: 87px -180px;
+        background-size: 678px;
+    }
+    @include breakpoint-up(650px){
+        background-position: 150px -180px;
+        background-size: 750px;
+    }
+
+    @include breakpoint-up(md){
+        background-position: 468px -195px;
+        background-size: 648px;
+    }
+
+    @include breakpoint-up(lg){
+        background-position: 641px -195px;
+        background-size: 698px;
+    }
+
+    @include breakpoint-up(xl){
+        background-position: 704px -248px;
+        background-size: 698px;
+    }
+
+    @include breakpoint-up(xxl){
+        background-position: 110% -90%;
+        background-size: 800px;
+        //background: blue;
+    }
+
+    //background-size: 550px;
+    font-family: 'Be Vietnam', sans-serif;
+    line-height: 1.75;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}

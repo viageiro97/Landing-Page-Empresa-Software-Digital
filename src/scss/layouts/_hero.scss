@@ -1,0 +1,79 @@
+@use '../abstracts/mixins' as *;
+
+.hero{
+    position: relative;
+    &::before{
+        content: "";
+        width: 120px;
+        height: 300px;
+        bottom: 20px;
+        right: 40px;
+        z-index: -1;
+        right: 0;
+        background: url('../../../public/images/bg-tablet-pattern.svg');
+        background-size: cover;
+        position: absolute;
+    }
+
+    
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-bottom: 120px;
+    }
+
+    &__left{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h1{
+            max-width: 400px;
+        }
+
+        p{
+            max-width: 350px;
+        }
+        .btn{
+            margin-top: 15px;
+        }
+    }
+
+    @include breakpoint-up(md){
+        &::before{
+            display: none;
+        }
+
+        &::after{
+            position: absolute;
+            content: "";
+            top: 150%;
+            left: -400px;
+            width: 750px;
+            height: 580px;
+            background: url('../../../public/images/bg-tablet-pattern.svg');
+            background-size: cover;
+    
+        }
+
+        .container{
+            display: flex;
+            text-align: left;
+            flex-direction: row-reverse;
+            align-items: center;
+        }
+
+        &__left{
+            flex: 1;
+            width: 50%;
+            align-items: flex-start;
+        }
+
+        &__right{
+            flex: 1;
+            width: 50%;
+        }
+        
+    }
+}

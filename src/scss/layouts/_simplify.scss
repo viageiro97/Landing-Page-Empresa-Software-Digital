@@ -1,0 +1,18 @@
+@use '../abstracts/index' as *;
+
+.simplify{
+    h2{
+        color: white;
+    }
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 60px;
+    padding:60px 0;
+    background: url('../../../public/images/bg-simplify-section-mobile.svg') no-repeat $bright-red;
+
+    @include breakpoint-up(md){
+        background: url('../../../public/images/bg-simplify-section-desktop.svg') no-repeat $bright-red;
+    }
+}

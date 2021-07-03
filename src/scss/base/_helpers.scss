@@ -1,0 +1,81 @@
+// -----------------------------------------------------------------------------
+// Este ficheiro contem classes utilitarias.
+// -----------------------------------------------------------------------------
+
+/**
+ * Classes de CSS Utilitarias.
+ */
+
+ @use '../abstracts' as *;
+
+// @Container Principal
+.container{
+    max-width: 1140px;
+    padding: $container-padding;
+    margin: 0 auto;
+}
+
+.img{
+    padding: 0;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.overlay{
+    display: none;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(to bottom,hsla(12, 100%, 96%, 0.233), hsla(12, 88%, 59%, 0.534));
+    top: 0;
+    left: 0;
+}
+
+.show{
+    display: block;
+}
+
+/**
+ * Slider.
+ */
+
+ //Classes para conseguir que os testemunhos estejam em ordem ao trocar
+.order-2{
+    z-index: 2;
+}
+
+.order-3{
+    z-index: 1;
+}
+
+.order-3Plus{
+    z-index: 3;
+}
+
+.active-slide{
+    transform: translateX(0);
+}
+
+.prev-slide{
+    transform: translateX(-115%);
+}
+
+.next-slide{
+    transform: translateX(115%);
+}
+
+/**
+ * Animacoes.
+ */
+@keyframes aparecer {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.animate-menu{
+    animation: aparecer 300ms forwards;
+}

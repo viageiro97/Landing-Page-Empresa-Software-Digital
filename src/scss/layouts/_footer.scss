@@ -1,0 +1,96 @@
+@use './../abstracts/' as *;
+footer{
+    background: $very-dark-blue;
+
+    .container{
+        @include breakpoint-up(md){
+            display: grid;
+            grid-template-areas: 'a b c'
+                                 'd b e';
+
+            .links,.social-links,.logo-home, .copyrights{
+                margin-top: 0;
+            }
+        }
+        padding-top: 60px;
+        padding-bottom: 30px;
+    }
+    .newsletter{
+        grid-area: c;
+        height: 45px;
+        form{
+            display: flex;
+            height: 100%;
+        }
+        input{
+            width: 80%;
+            font-family: $font-fam;
+            height: 45px;
+            padding: 5px 20px;
+            border: none;
+            border-radius: $comp-radius2;
+            &::placeholder{
+                font-family: $font-fam;
+            }
+        }
+        .btn{
+            margin-left: 15px;
+        }
+    }
+
+    .links{
+        grid-area: b;
+        margin-top: 35px;
+        display: grid;
+        li{
+            padding-bottom: 14px;
+            padding-left: 30px;
+        }
+        grid-template-columns: 1fr 1fr;
+        a{
+            line-height: 1;
+            transition: $transition1;
+            color: white;
+            &:hover{
+                color: $bright-red;
+            }
+        }
+    }
+
+    .social-links{
+        width: 75%;
+        max-width: 400px;
+        grid-area: d;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 35px;
+        img{
+            height: 100%;
+            object-fit: contain;
+            width: 23px;
+        }
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .logo-home{
+        grid-area: a;
+        margin-top: 35px;
+        img{
+            margin-left: auto;
+            margin-right: auto;
+            width: 146px;
+        }
+    }
+
+    .copyrights{
+        grid-area: e;
+        p{
+            margin-left: auto;
+            margin-right: auto;
+        }
+        margin-top: 35px;
+        text-align: center;
+    }
+
+}
